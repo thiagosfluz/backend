@@ -22,6 +22,13 @@ exits = {0: {"Q": 0},
          4: {"N": 1, "W": 2, "Q": 0},
          5: {"W": 2, "S": 1, "Q": 0}}
 
+
+nameexits = {1: {"2": 2, "3": 3, "5": 5, "4": 4,},
+             2: {"5"},
+             3: {"1": 1},
+             4: {"1": 1, "2": 2},
+             5: {"2": 2, "1": 1}}
+
 vocabulary = {"QUIT": "Q",
               "NORTH": "N",
               "SOUTH": "S",
@@ -36,6 +43,9 @@ while True:
 
     if loc == 0:
         break
+    else:
+        allexits = exits[loc].copy()
+        allexits.update(nameexits[loc])
 
     direction = input("Available exits are " + availableExits + " ").upper()
     print()
@@ -50,11 +60,11 @@ while True:
                 direction = vocabulary[word]
                 break
 
-    if direction in exits[loc]:
-        loc = exits[loc][direction]
+    if direction in allexits:
+        loc = allexits[direction]
 
-    elif direction in vocabulary.keys() and vocabulary[direction] in exits[loc]:
-        loc = exits[loc][vocabulary[direction]]
+    # elif direction in vocabulary.keys() and vocabulary[direction] in exits[loc]:
+    #     loc = exits[loc][vocabulary[direction]]
 
     else:
         print("You cannot go in that direction")
