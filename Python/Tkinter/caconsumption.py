@@ -133,14 +133,24 @@ coins = [1, 0.50, 0.25, 0.10, 0.05, 0.01]
 
 print("NOTAS:")
 for bill in bills:
-    amountbills = realamount//bill
-    realamount -= amountbills*bill
+    amountbills = round(realamount//bill)
+    realamount -= round(amountbills*bill)
+
     print("{:.0f} nota(s) de R$ {}.00".format(amountbills, bill))
 
+#realamount += 0.01
 
 print("MOEDAS:")
-
 for coin in coins:
-    amountcoins = realamount//coin
-    realamount -= amountcoins*coin
+
+    #amountcoins = round(realamount/coin,2)
+    #print(amountcoins)
+
+    amountcoins = round(realamount//coin)
+    print(amountcoins)
+
+    realamount -= round(amountcoins*coin,2)
+    print(realamount)
+
+
     print("{:.0f} moeda(s) de R$ {:.2f}".format(amountcoins, coin))
