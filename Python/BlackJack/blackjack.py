@@ -203,7 +203,7 @@ shuffle()
 dealer_hand = []
 player_hand = []
 
-new_game()
+new_game()tt
 
 
 mainWindow.mainloop()
