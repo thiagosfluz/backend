@@ -109,26 +109,127 @@
 
 # Read three integers
 
-a, b, c = [int(i) for i in input().split()]
-
-list_numbers = [a, b, c]
+# a, b, c = [int(i) for i in input().split()]
+#
+# list_numbers = [a, b, c]
 
 
 # logic using Bubble Sort
 
-def orderLIst(list_numbers):
-    for i in range(len(list_numbers) - 1, 0, - 1):
-        for j in range(i):
-            if list_numbers[j] > list_numbers[j + 1]:
-                aux = list_numbers[j]
-                list_numbers[j] = list_numbers[j + 1]
-                list_numbers[j + 1] = aux
+# def orderLIst(list_numbers):
+#     for i in range(len(list_numbers) - 1, 0, - 1):
+#         for j in range(i):
+#             if list_numbers[j] > list_numbers[j + 1]:
+#                 aux = list_numbers[j]
+#                 list_numbers[j] = list_numbers[j + 1]
+#                 list_numbers[j + 1] = aux
+#
+#
+# # print
+# list_numbers2 = list(list_numbers)
+#
+# # orderLIst(list_numbers)
+# # print("{}\n{}\n{}".format(list_numbers[0], list_numbers[1], list_numbers[2]))
+# print("")
+# print("{}\n{}\n{}".format(list_numbers2[0], list_numbers2[1], list_numbers2[2]))
+
+#
+# Read 3 double numbers (A, B and C) representing the sides of a triangle and arrange
+# them in decreasing order, so that the side A is the biggest of the three sides.
+# Next, determine the type of triangle that they can make, based on the following
+# cases always writing an appropriate message:
+# if A ≥ B + C, write the message: NAO FORMA TRIANGULO
+# if A2 = B2 + C2, write the message: TRIANGULO RETANGULO
+# if A2 > B2 + C2, write the message: TRIANGULO OBTUSANGULO
+# if A2 < B2 + C2, write the message: TRIANGULO ACUTANGULO
+# if the three sides are the same size, write the message: TRIANGULO EQUILATERO
+# if only two sides are the same and the third one is different, write the message: TRIANGULO ISOSCELES
+# Input
+# The input contains three double numbers, A (0 < A) , B (0 < B) and C (0 < C).
+#
+# Output
+# Print all the classifications of the triangle presented in the input.
 
 
-# print
-list_numbers2 = list(list_numbers)
+#read three numbers
+#
+# a, b, c = [float(i) for i in input().split()]
+#
+# #rearrange in decreasing order
+# list_sorted = sorted([a, b, c], reverse=True)
+#
+# a, b, c = list_sorted[0], list_sorted[1], list_sorted[2]
+#
+# #print
+#
+# if a >= b + c:
+#     print("NAO FORMA TRIANGULO")
+# else:
+#     if pow(a, 2) == pow(b, 2) + pow(c, 2):
+#         print("TRIANGULO RETANGULO")
+#     if pow(a, 2) > pow(b, 2) + pow(c, 2):
+#         print("TRIANGULO OBTUSANGULO")
+#     if pow(a, 2) < pow(b, 2) + pow(c, 2):
+#         print("TRIANGULO ACUTANGULO")
+#     if a == b and a == c and b == c:
+#         print("TRIANGULO EQUILATERO")
+#     if a == b and a != c or a == c and a != b or b == c and a != b:
+#         print("TRIANGULO ISOSCELES")
 
-orderLIst(list_numbers)
-print("{}\n{}\n{}".format(list_numbers[0], list_numbers[1], list_numbers[2]))
-print("")
-print("{}\n{}\n{}".format(list_numbers2[0], list_numbers2[1], list_numbers2[2]))
+
+# read
+
+n = int(input())
+
+# store in a list
+
+words_list = []
+
+for i in range(n):
+    words_list.append(list(input()))
+
+# logic
+
+for words in words_list:
+    for i in range(len(words)):
+        if 64 < ord(words[i]) < 123:
+            words[i] = chr(ord(words[i]) + 3)
+    words.reverse()
+
+    for i in range(len(words)//2, len(words)):
+        words[i] = chr(ord(words[i]) - 1)
+    print("".join(words))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
