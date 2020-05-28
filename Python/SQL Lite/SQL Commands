@@ -1,0 +1,65 @@
+to start sqllite3
+
+sqlite3
+
+to exit type
+.quit
+
+to exit sqlite command line
+ctrl +d
+
+to create a database
+
+.database - to show databases
+
+sqlite3 test.db (database name)
+
+.headers on show column names
+
+create table contact (name text, phone integer, email text);
+
+insert into contents (name, phone, email) values ('Tim', 6541223, 'tim@gmail.com');
+
+select * from contents;
+
+select email from contents;
+
+Insert in just some columns
+
+insert into contents (name, phone) values ('Tim', 6541223);
+
+
+TO save a backup of the table
+.backup testbackup
+
+to restore the original table
+.restore testbackup
+
+Update data
+
+update contents set email="thiago.luz@sps.com";
+
+update just one row: update contents set email= "thiago.luz@sps.com" where name = "Tim";
+
+Select with were
+
+select * from contents where name = "Tim";
+
+delete records
+
+delete from contents 
+
+delete from contents where name = "Tim"
+
+.tables - show all tables
+
+.schema - show the database structure
+
+.dump - show database transactions
+
+.exit - get out of sqlite command
+
+
+How to do a join
+
+ 
